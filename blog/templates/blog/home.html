@@ -1,0 +1,68 @@
+{% extends 'blog/layout/base.html'%}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title%} Amazon {% endblock %}</title>
+ 
+</head>
+
+<body>
+{% block content %}
+{%for thing in things %}
+<div style="display: inline-block;">
+    <div style="display: inline-block;">
+    <div class="card" style="width: 305px; height:370px; margin: 30px;">
+  <img class="card-img-top" src="{% static 'images/'|add:thing.img %}" alt="Card image cap" width="100" height="150">
+  <div class="card-body">
+    <h5 class="card-title">{{thing.product_name}}</h5>
+    <a href="{% url 'blog-show' thing.id %}" class="btn btn-primary">Show</a>
+    <a href="{% url 'blog-delete' thing.id %}" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+</div>
+
+</div>
+{%endfor%}
+{%endblock%}
+
+<table>
+	<tr>
+		<td class="td"><a href="l1.html"><img src="../../static/images/l1.jpg" /></a>HP Laptop</td>
+		<td class="td"><a href="l2.html"><img src="../../static/images/l2.jpg" /></a>Mac Laptop</td>
+		<td class="td"><a href="l3.html"><img  src="../../static/images/l3.jpg" /></a>HP Laptop</td>
+		<td class="td"><a href="h1.html"><img src="../../static/images/h1.jpg" /></a>Sony Head Phone</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td class="td"><a href="h2.html"><img src="../../static/images/h2.jpg" /></a> Golden Head Phone </td>
+		<td class="td"><a href="scr.html"><img src="../../static/images/scr.jpg" /></a>LG Tv Screen</td>
+		<td class="td"><a href="l2.html"><img src="../../static/images/l2.jpg" /></a>Mac Laptop</td>
+	    <td class="td"><a href="h2.html"><img src="../../static/images/h2.jpg" /></a>Golden Head Phone</td>
+    </tr>
+</table>
+	<table>
+		<tr>
+			<td class="td"><a href="scr.html"><img src="../../static/images/scr.jpg" /></a>LG Tv Screen</td>
+	        <td class="td"><a href="p2.html"><img src="../../static/images/p2.jpg" /></a> Sumsung Mobile</td>
+	        <td class="td"><a href="p3.html"><img src="../../static/images/p3.jpg" /></a> Galexy A72 Mobile</td>
+	        <td class="td"><a href="p2.html"><img src="../../static/images/p2.jpg" /></a> Sumsung Mobile</td>
+        </tr>
+</table>
+	<table>
+		<tr>
+			<td class="td"><a href="p1.html"><img src="../../static/images/p1.jpg" /></a> OPPO Mobile</td>
+	        <td class="td"><a href="l3.html"><img src="../../static/images/l3.jpg" /></a>HP Laptop</td>
+	        <td class="td"><a href="h1.html"><img src="../../static/images/h1.jpg" /></a>Sony Head Phone</td>
+	        <td class="td"><a href="p2.html"><img src="../../static/images/p2.jpg" /></a> Sumsung Mobile</td>
+        </tr>
+    </table>
+
+
+	
+</body>
+</html>

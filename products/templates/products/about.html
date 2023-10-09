@@ -1,0 +1,49 @@
+{% extends 'products/layout/base.html'%}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	 
+	
+	<title>{% block title %}About Us{% endblock %}</title>
+</head>
+<body>
+	{% block content %}
+	<div class="r" style="background-color: #CF9FFF;align: center; border-radius: 10%; font-size: 15px;text-align:center ;margin-bottom: 150px;margin-top: 60px;">
+		<h3>About Us</h3>
+	ITI is one of the training entities affiliated with the Ministry of Communications and
+		 Information Technology (MCIT). The Institute develops youth capabilities and skills 
+		 through a diversified set of capacity-building programs and professional advanced coaching.
+		 Advancing the productivity and efficiency of IT users in various businesses for work automation, 
+		 promotion and facilitation. 
+		 ITI has kept updating its training portfolio through continuous monitoring.
+		 Its main mission revolves around ICT human capacity development.
+		 Enriching the knowledge of University undergraduates in niche IT areas of high market demand. 
+		 Graduating young cadres especially in niche areas of high demand in the ICT market.
+		 There are three types of goals- process, performance, and outcome goals. Process goals are specific actions or 'processes' of performing.
+		 
+	</div>
+	{% endblock %}
+        {% block body %}
+		<table>
+		<tr>
+			<td>
+			<table class="t1"  style=" margin: 20px 200px 15px 40px;" >
+				<tr><td>
+		        <img class="div2" style=" width: 150px;height: 100px;border-radius: 10%;" src="../../static/images/man.png"></td></tr></table></td>
+             <td>
+		    
+		    <table class="t2" style="margin: 10px 50px 15px 80px;" ><tr><td><img class="div3" style=" width: 150px;height: 100px;border-radius: 10%;"  src="../../static/images/iti.jpg"> </td></tr></table></td>
+		      <td>  
+		    <table class="t3" style="margin: 10px 50px 15px 100px;"><tr><td><img class="div4" style=" width: 150px;height: 100px;border-radius: 10%;" src="../../static/images/ec.jpg">
+		  </td></tr></table></td>
+	</td>
+</tr>
+</table>
+ {% endblock%}
+
+
+	
+
+</body>
+</html>

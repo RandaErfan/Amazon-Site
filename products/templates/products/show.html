@@ -1,0 +1,20 @@
+{% extends 'blog/layout/base.html'%}
+{%load static %}
+{% block title %} Product Info{% endblock %}
+
+{% block content %}
+
+<div style="display: inline-block;">
+    <div style="display: inline-block;">
+    <div class="card" style="width: 305px; height:500px; margin: 30px;">
+  <img class="card-img-top" src={{product.get_image_url}} alt="Card image cap" width="100" height="180">
+  <div class="card-body">
+    <h5 class="card-title"><font style="color:plum;"><b>{{product.name}}</b></font></h5>
+    <h5 class="card-title"><font style="color:mediumpurple;"><b>Category: </b>{{product.category}}</font></h5>
+    <p class="card-text"><b>About Product:</b> {{product.description}}</p>
+    <p class="card-text"><b>Price:</b>{{product.current_price}} EGP</p>
+    <p class="card-text"><b>updated at:</b>{{product.update_at}}</p>
+    <p class="card-text"><b>created at:</b>{{product.created_at}}</p>
+    
+    <a href="{% url 'products-index' %}" class="btn btn-primary">Back To Home Page</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'products/layout/base.html'  %}
+{% load static %}
+{% block title %}  Edit Product  {% endblock %}
+
+{% block content %}
+<script src="{% static 'js/bootstrap.js'%}"> </script>
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <h1> Edit Product  </h1>
+<img  src= {{product.get_image_url}} ,width="100", height="100">
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name='name' value='{{product.name}}' class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">image</label>
+            <input type="file" name="image" value='{{product.get_img_url}}' class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" name="description" value='{{product.description}}' class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="text" name="price" value='{{product.current_price}}' class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example" name="category_id" value={{product.category}}>
+                <option selected disabled value="">Open this select menu</option>
+                {% for category in categories %}
+                <option value="{{category.id}}">{{category}}</option>
+                {% endfor %}
+                 </select>
+            </div>
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+                
+        
+    </form>
+</div>
+{% endblock%}
